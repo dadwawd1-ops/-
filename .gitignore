@@ -1,0 +1,13 @@
+node_modules
+.env
+cache
+out
+broadcast
+artifacts
+frontend/node_modules
+frontend/dist
+.DS_Store
+coverage
+.open-next
+.docusaurus
+.yarn

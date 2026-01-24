@@ -1,0 +1,9 @@
+[profile.default]
+src = "contracts"
+test = "test"
+script = "script"
+out = "out"
+libs = ["node_modules", "lib"]
+
+# 允许使用 console.log
+fs_permissions = [{ access = "read", path = "./"}]
