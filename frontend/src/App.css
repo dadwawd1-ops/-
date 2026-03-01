@@ -1,42 +1,245 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.poster {
+  width: min(1280px, 96vw);
+  margin: 1rem auto 2rem;
+  color: #14309a;
+  font-family: 'Segoe UI', 'PingFang SC', sans-serif;
+}
+
+.poster-header {
+  border: 2px solid #4f67e8;
+  background: #eef1ff;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 0.9rem;
   text-align: center;
+  position: relative;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.poster-header h1 {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.7vw, 2.2rem);
+  color: #4d59de;
+  letter-spacing: 0.5px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.poster-header p {
+  margin: 0.45rem 0 0;
+  color: #4452a8;
+}
+
+.connect-btn {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: #4f67e8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.45rem 0.85rem;
+  cursor: pointer;
+}
+
+.panel {
+  border: 2px solid #6f7ef2;
+  background: #f8f9ff;
+  border-radius: 10px;
+  margin-bottom: 0.9rem;
+  padding: 0.8rem;
+}
+
+.panel h2 {
+  margin: 0 0 0.65rem;
+  font-size: 1rem;
+  color: #3046bf;
+}
+
+.grid.two-col {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 0.8rem;
+}
+
+.subpanel {
+  border: 1px solid #8f9dff;
+  border-radius: 8px;
+  background: #fff;
+  padding: 0.7rem;
+}
+
+.subpanel h3 {
+  margin: 0 0 0.45rem;
+  font-size: 0.92rem;
+  color: #2b3c9e;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.83rem;
+}
+
+th,
+td {
+  border: 1px solid #d6dcff;
+  padding: 0.4rem;
+  text-align: left;
+  color: #2c3993;
+}
+
+th {
+  background: #eef1ff;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  box-sizing: border-box;
+  border: 1px solid #9aa8ff;
+  border-radius: 6px;
+  padding: 0.55rem;
+  font-size: 0.88rem;
+}
+
+.composer-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.45rem;
+}
+
+.composer-footer button {
+  background: #4f67e8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+}
+
+.composer-footer button:disabled {
+  background: #9ca8eb;
+  cursor: not-allowed;
+}
+
+.error {
+  font-size: 0.8rem;
+  color: #d04242;
+}
+
+.message-list {
+  margin-top: 0.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.message-item {
+  border: 1px dashed #a7b3ff;
+  border-radius: 6px;
+  padding: 0.45rem;
+  background: #f9faff;
+}
+
+.message-item-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: #5261b6;
+  gap: 0.5rem;
+}
+
+.message-item p {
+  margin: 0.35rem 0 0;
+  font-size: 0.85rem;
+  color: #1f2f8e;
+  word-break: break-word;
+}
+
+.placeholder {
+  margin: 0;
+  color: #7f8bc8;
+  font-size: 0.84rem;
+}
+
+.flow-row {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(130px, 1fr));
+  gap: 0.55rem;
+}
+
+.flow-node {
+  border: 2px solid #9faaff;
+  border-radius: 10px;
+  padding: 0.55rem;
+  background: #ffffff;
+}
+
+.flow-node .index {
+  display: inline-flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background: #4f67e8;
+  color: #fff;
+  font-size: 0.75rem;
+}
+
+.flow-node h4 {
+  margin: 0.3rem 0;
+  font-size: 0.86rem;
+  color: #2f43b8;
+}
+
+.flow-node p {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #5d6abc;
+}
+
+.epoch-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(140px, 1fr));
+  gap: 0.6rem;
+}
+
+.epoch-block {
+  border-radius: 8px;
+  padding: 0.7rem;
+  text-align: center;
+  border: 2px solid;
+}
+
+.epoch-block.collection {
+  border-color: #1fbe8a;
+  background: #e6fff6;
+}
+
+.epoch-block.execution {
+  border-color: #f19f2a;
+  background: #fff4e3;
+}
+
+.epoch-block.attest {
+  border-color: #4f7fff;
+  background: #edf3ff;
+}
+
+.epoch-block.finality {
+  border-color: #b8bfd8;
+  background: #f3f4f8;
+}
+
+@media (max-width: 980px) {
+  .grid.two-col,
+  .flow-row,
+  .epoch-row {
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
+
+  .connect-btn {
+    position: static;
+    margin-top: 0.75rem;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
